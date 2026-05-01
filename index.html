@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Manoj Pentapalli — Salesforce Business Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F1F3D;--blue:#0176D3;--blue2:#1B96FF;--teal:#06A59A;--white:#FFFFFF;--off:#F4F7FB;--gray:#5A6A7E;--light:#E2EAF4;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--navy);line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,31,61,0.96);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:58px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.nav-logo{font-family:var(--serif);color:var(--white);font-size:1rem;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--blue2)}
+.hero{min-height:100vh;background:var(--navy);display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;padding:80px 6vw 60px;gap:4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(1,118,211,.18) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:20%;width:500px;height:500px;background:radial-gradient(circle,rgba(6,165,154,.09) 0%,transparent 65%);pointer-events:none}
+.hero-text{position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:.45rem;background:rgba(1,118,211,.14);border:1px solid rgba(27,150,255,.28);color:var(--blue2);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.32rem .9rem;border-radius:100px;margin-bottom:1.4rem;animation:fadeUp .5s ease both}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,4.5vw,4rem);color:var(--white);line-height:1.08;margin-bottom:.8rem;animation:fadeUp .5s .1s ease both}
+.hero h1 em{font-style:italic;color:var(--blue2)}
+.hero-role{font-size:.95rem;color:rgba(255,255,255,.5);font-weight:300;letter-spacing:.02em;margin-bottom:1.8rem;animation:fadeUp .5s .2s ease both}
+.hero-desc{font-size:.98rem;color:rgba(255,255,255,.72);max-width:500px;line-height:1.75;margin-bottom:2.2rem;animation:fadeUp .5s .3s ease both}
+.ctas{display:flex;gap:.85rem;flex-wrap:wrap;animation:fadeUp .5s .4s ease both}
+.btn-p{background:var(--blue);color:var(--white);padding:.7rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:.88rem;border:2px solid var(--blue);transition:background .2s,transform .15s}
+.btn-p:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-1px)}
+.btn-o{background:transparent;color:rgba(255,255,255,.85);padding:.7rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:500;font-size:.88rem;border:2px solid rgba(255,255,255,.2);transition:border-color .2s,color .2s,transform .15s}
+.btn-o:hover{border-color:var(--blue2);color:var(--blue2);transform:translateY(-1px)}
+.hero-card{position:relative;z-index:1;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2rem;backdrop-filter:blur(8px);animation:fadeUp .5s .5s ease both}
+.hc-lbl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1.2rem}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.4rem}
+.stat-num{font-family:var(--serif);font-size:2.1rem;color:var(--blue2);line-height:1;margin-bottom:.15rem}
+.stat-lbl{font-size:.74rem;color:rgba(255,255,255,.45)}
+.cert-stack{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem}
+.cert-item{display:flex;align-items:center;gap:.55rem;background:rgba(1,118,211,.14);border:1px solid rgba(27,150,255,.2);border-radius:7px;padding:.5rem .85rem;font-size:.78rem;color:var(--blue2);font-weight:500}
+.cert-item::before{content:'✦';font-size:.55rem;flex-shrink:0}
+.trail-row{padding-top:1rem;border-top:1px solid rgba(255,255,255,.07);font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6}
+.trail-row strong{color:var(--teal)}
+.sb-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(6,165,154,.15);border:1px solid rgba(6,165,154,.25);border-radius:4px;padding:.15rem .55rem;font-size:.72rem;font-weight:700;color:var(--teal);margin-top:.4rem}
+section{padding:88px 6vw}
+.sec-lbl{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:.65rem}
+.sec-title{font-family:var(--serif);font-size:clamp(1.9rem,3.2vw,2.7rem);color:var(--navy);line-height:1.12;margin-bottom:.9rem}
+.sec-intro{font-size:.98rem;color:var(--gray);max-width:580px;line-height:1.75;margin-bottom:3.5rem}
+.about{background:var(--off)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.story p{color:var(--gray);line-height:1.82;font-size:.95rem;margin-bottom:1.1rem}
+.story p strong{color:var(--navy);font-weight:600}
+.hls{display:flex;flex-direction:column;gap:.85rem}
+.hl{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:1.15rem 1.35rem;display:flex;align-items:flex-start;gap:.9rem;transition:box-shadow .2s,transform .15s}
+.hl:hover{box-shadow:0 5px 22px rgba(15,31,61,.09);transform:translateY(-2px)}
+.hl-ico{width:38px;height:38px;border-radius:8px;background:rgba(1,118,211,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.hl-txt h4{font-size:.88rem;font-weight:600;color:var(--navy);margin-bottom:.18rem}
+.hl-txt p{font-size:.8rem;color:var(--gray);line-height:1.55}
+.experience{background:var(--white)}
+.timeline{position:relative}
+.timeline::before{content:'';position:absolute;left:0;top:10px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blue),var(--teal))}
+.exp-item{padding-left:2.4rem;margin-bottom:3.2rem;position:relative}
+.exp-item::before{content:'';position:absolute;left:-5px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid var(--white);box-shadow:0 0 0 3px rgba(1,118,211,.2)}
+.exp-meta{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.35rem}
+.exp-co{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
+.exp-date{font-size:.74rem;color:var(--gray);background:var(--off);padding:.18rem .55rem;border-radius:4px;font-weight:500}
+.exp-title{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.25rem}
+.exp-ctx{font-size:.83rem;color:var(--gray);font-style:italic;margin-bottom:.85rem}
+.exp-bul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.exp-bul li{font-size:.88rem;color:#374860;padding-left:1.15rem;position:relative;line-height:1.6}
+.exp-bul li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:.72rem;top:.22rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem}
+.tag{font-size:.7rem;font-weight:500;padding:.2rem .58rem;border-radius:4px;background:rgba(1,118,211,.07);color:var(--blue);border:1px solid rgba(1,118,211,.14)}
+.trailhead-sec{background:var(--navy)}
+.trailhead-sec .sec-lbl{color:var(--teal)}
+.trailhead-sec .sec-title{color:var(--white)}
+.trailhead-sec .sec-intro{color:rgba(255,255,255,.45)}
+.th-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.th-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.th-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:1.3rem;text-align:center}
+.th-num{font-family:var(--serif);font-size:2.2rem;color:var(--blue2);line-height:1;margin-bottom:.2rem}
+.th-lbl{font-size:.74rem;color:rgba(255,255,255,.4)}
+.ranger-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.1rem 1.3rem}
+.ranger-top{display:flex;justify-content:space-between;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:.55rem}
+.ranger-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.ranger-fill{height:100%;width:51%;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:3px}
+.ranger-note{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.45rem}
+.th-right h3{font-family:var(--serif);font-size:1.6rem;color:var(--white);margin-bottom:1rem}
+.th-right p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.72;margin-bottom:1rem}
+.sb-list{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
+.sb-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:rgba(255,255,255,.65);padding:.5rem .85rem;background:rgba(6,165,154,.1);border:1px solid rgba(6,165,154,.2);border-radius:7px}
+.sb-item::before{content:'◆';color:var(--teal);font-size:.55rem;flex-shrink:0}
+.ctags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.ctag{font-size:.74rem;font-weight:600;padding:.28rem .7rem;border-radius:4px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.1)}
+.portfolio{background:var(--off)}
+.port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.3rem}
+.port-card{background:var(--white);border:1px solid var(--light);border-radius:12px;padding:1.8rem;position:relative;overflow:hidden;transition:box-shadow .25s,transform .2s}
+.port-card:hover{box-shadow:0 8px 30px rgba(15,31,61,.1);transform:translateY(-3px)}
+.port-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--teal))}
+.port-num{font-family:var(--serif);font-size:2.8rem;color:var(--light);position:absolute;top:.8rem;right:1.2rem;line-height:1;font-style:italic}
+.port-type{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.55rem}
+.port-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.55rem;line-height:1.3;padding-right:2rem}
+.port-card p{font-size:.83rem;color:var(--gray);line-height:1.62;margin-bottom:1.1rem}
+.status{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:600;padding:.22rem .65rem;border-radius:100px}
+.s-live{background:rgba(6,165,154,.1);color:var(--teal)}
+.s-wip{background:rgba(1,118,211,.1);color:var(--blue)}
+.s-plan{background:rgba(90,106,126,.1);color:var(--gray)}
+.skills{background:var(--white)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.sg{background:var(--off);border:1px solid var(--light);border-radius:10px;padding:1.35rem}
+.sg-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.9rem;padding-bottom:.55rem;border-bottom:1px solid var(--light)}
+.pills{display:flex;flex-wrap:wrap;gap:.38rem}
+.skpill{font-size:.75rem;padding:.25rem .62rem;border-radius:4px;background:var(--white);color:var(--navy);border:1px solid var(--light);font-weight:400}
+.contact-sec{background:var(--navy);text-align:center}
+.contact-sec .sec-lbl{color:var(--teal)}
+.contact-sec .sec-title{color:var(--white)}
+.contact-desc{font-size:.97rem;color:rgba(255,255,255,.48);max-width:480px;margin:0 auto 2.4rem;line-height:1.75}
+.contact-links{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.cl{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.75);text-decoration:none;padding:.65rem 1.25rem;border-radius:8px;font-size:.85rem;font-weight:500;transition:background .2s,border-color .2s,color .2s}
+.cl:hover{background:rgba(1,118,211,.2);border-color:var(--blue2);color:var(--blue2)}
+.contact-note{font-size:.78rem;color:rgba(255,255,255,.25)}
+.contact-note strong{color:rgba(255,255,255,.4)}
+footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;color:rgba(255,255,255,.18)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:96px}.hero-card{margin-top:2rem}.about-grid,.th-grid{grid-template-columns:1fr;gap:2rem}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Sai Manoj Pentapalli</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#trailhead">Trailhead</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="pill">Open to Work · Hayward, CA</div>
+    <h1>Salesforce<br><em>Business Analyst</em></h1>
+    <p class="hero-role">CRM Systems · Process Design · M.S. Business Analytics</p>
+    <p class="hero-desc">I bridge the gap between business problems and technical solutions — translating stakeholder needs into scalable CRM workflows, structured requirements, and data systems that actually get used.</p>
+    <div class="ctas">
+      <a href="SaiManoj_Pentapalli_Resume.pdf" class="btn-p" download>Download Resume</a>
+      <a href="#portfolio" class="btn-o">View Portfolio</a>
+      <a href="mailto:saimanojpentapalli@gmail.com" class="btn-o">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hc-lbl">Career Snapshot</div>
+    <div class="stat-grid">
+      <div><div class="stat-num">5+</div><div class="stat-lbl">Years experience</div></div>
+      <div><div class="stat-num">3</div><div class="stat-lbl">Industries</div></div>
+      <div><div class="stat-num">700+</div><div class="stat-lbl">Users supported</div></div>
+      <div><div class="stat-num">16</div><div class="stat-lbl">Superbadges</div></div>
+    </div>
+    <div class="cert-stack">
+      <div class="cert-item">Salesforce Platform Administrator — Nov 2024</div>
+      <div class="cert-item">Platform App Builder — Apr 2025</div>
+      <div class="cert-item">M.S. Business Analytics · CSU East Bay</div>
+    </div>
+    <div class="trail-row">
+      Trailhead <strong>Expeditioner</strong> · 51 badges · 72,500 pts<br>
+      <span class="sb-badge">◆ 16 Superbadges earned</span>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="sec-lbl">Background</div>
+  <div class="sec-title">Who I Am</div>
+  <div class="about-grid">
+    <div class="story">
+      <p>I'm a <strong>Salesforce-focused Business Analyst</strong> with five years of experience across enterprise software, nonprofit operations, and early-stage startups. I started as a Salesforce administrator, earned an M.S. in Business Analytics, and discovered that what I do best sits at the intersection: understanding what a business actually needs, then making sure the system delivers it.</p>
+      <p>At <strong>EPIQ Global</strong>, I worked inside a large enterprise org serving 700+ users — building automations, leading UAT, integrating external systems. At <strong>Hopkins Software</strong>, I translated campaign strategy into Marketing Cloud workflows directly alongside sales and marketing stakeholders. At <strong>Add On Support Services</strong>, I designed an entire operational system from scratch — no CRM, no documentation, nothing — and built it all, from SRS authorship to legal policy addenda.</p>
+      <p>That experience taught me something important: <strong>the tool is secondary. Understanding the problem is everything.</strong> Whether that means writing an SRS, facilitating a stakeholder interview, or configuring a Salesforce Flow — the through-line is always the same: clarity first, then execution.</p>
+    </div>
+    <div class="hls">
+      <div class="hl"><div class="hl-ico">📋</div><div class="hl-txt"><h4>Requirements & Documentation</h4><p>SRS authorship, BRD writing, user stories, gap analysis — documentation that developers and executives both actually use.</p></div></div>
+      <div class="hl"><div class="hl-ico">⚙️</div><div class="hl-txt"><h4>Salesforce Configuration</h4><p>Flow Builder, validation rules, approval processes, REST API integrations, security configuration, data governance across multiple orgs.</p></div></div>
+      <div class="hl"><div class="hl-ico">📊</div><div class="hl-txt"><h4>Data & Process Analysis</h4><p>Cost modeling, KPI dashboards, venue viability analysis, program budget baselines — turning raw data into decisions leadership can act on.</p></div></div>
+      <div class="hl"><div class="hl-ico">🤝</div><div class="hl-txt"><h4>Stakeholder Alignment</h4><p>Interviewing executives, translating non-technical requirements, managing mid-project pivots — keeping business and technical teams on the same page.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="sec-lbl">Work History</div>
+  <div class="sec-title">Experience</div>
+  <p class="sec-intro">Five years across enterprise, nonprofit, and startup environments — each role adding a different dimension to how I think about CRM systems and business problems.</p>
+  <div class="timeline">
+    <div class="exp-item">
+      <div class="exp-meta"><span class="exp-co">Add On Support Services</span><span class="exp-date">Sep 2024 – Present</span></div>
+      <div class="exp-title">CRM Business Analyst & Project Coordinator</div>
+      <div class="exp-ctx">Nonprofit serving neurodiverse individuals — designed systems from the ground up in a pre-CRM environment.</div>
+      <ul class="exp-bul">
+        <li>Authored a full SRS for the GET Pragnya mobile app — 6 modules, approval-gated, MVP vs Phase 2 scope clearly defined, consumed directly by the development team</li>
+        <li>Conducted stakeholder interviews with CEO and COO; translated non-technical expectations into structured user stories and acceptance criteria</li>
+        <li>Evaluated competing platforms against HIPAA compliance, backend complexity, and launch timelines — drove executive platform selection</li>
+        <li>Built multi-variable program cost model establishing ~$2.00/person budget baseline across 52 weeks of programming</li>
+        <li>Designed RACI-style staffing frameworks for 3 session types across 6 operational phases, aligned with Regional Center compliance requirements</li>
+        <li>Drafted legal policy addendum and produced audit-ready documentation for program compliance</li>
+      </ul>
+      <div class="tags"><span class="tag">SRS</span><span class="tag">Stakeholder Interviews</span><span class="tag">Gap Analysis</span><span class="tag">Cost Modeling</span><span class="tag">HIPAA</span><span class="tag">Firebase</span><span class="tag">FlutterFlow</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta"><span class="exp-co">EPIQ Global</span><span class="exp-date">Aug 2021 – Mar 2022</span></div>
+      <div class="exp-title">Associate Business Analyst</div>
+      <div class="exp-ctx">Enterprise Salesforce org — automation, data governance, integrations, and UAT at scale.</div>
+      <ul class="exp-bul">
+        <li>Deployed 25+ Flows and Process Builder automations for 700+ users — reduced manual tasks 28%, cut case escalations 50%</li>
+        <li>Configured roles, profiles, permission sets, and sharing rules achieving 99.9% audit compliance</li>
+        <li>Integrated Salesforce with external systems via REST API and Data Loader — reduced sync failures 35%</li>
+        <li>Led UAT for 10+ major releases; authored test scripts, tracked defects, zero critical post-deploy bugs, improved release velocity 20%</li>
+      </ul>
+      <div class="tags"><span class="tag">Salesforce</span><span class="tag">Flow Builder</span><span class="tag">REST API</span><span class="tag">UAT</span><span class="tag">Data Loader</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta"><span class="exp-co">Amazon</span><span class="exp-date">Oct 2020 – Aug 2021</span></div>
+      <div class="exp-title">Digital, Device & Alexa Support Associate</div>
+      <div class="exp-ctx">CRM-driven support operations — process optimization and AI self-service tool development.</div>
+      <ul class="exp-bul">
+        <li>Resolved 95% of Alexa-related issues on first contact via CRM workflows — reduced resolution time 15%</li>
+        <li>Partnered with engineering to develop AI-powered self-service tools — reduced repeat tickets 20%</li>
+        <li>Optimized CRM-based support processes improving agent productivity and satisfaction scores 20%</li>
+      </ul>
+      <div class="tags"><span class="tag">CRM</span><span class="tag">Process Optimization</span><span class="tag">AI Tools</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-meta"><span class="exp-co">Hopkins Software Pvt Ltd</span><span class="exp-date">Aug 2019 – Oct 2020</span></div>
+      <div class="exp-title">Salesforce Business Analyst</div>
+      <div class="exp-ctx">Full BA role — requirements gathering, Marketing Cloud automation, stakeholder alignment, ERP integrations.</div>
+      <ul class="exp-bul">
+        <li>Gathered requirements and implemented Marketing Cloud automation (Email Studio, Journey Builder, Pardot) — reduced manual effort 30%, improved conversions 25%</li>
+        <li>Designed 15+ Flows, validation rules, and approval processes — reduced errors 20%, accelerated sales cycle 15%</li>
+        <li>Performed data modeling and segmentation design improving campaign engagement 20%</li>
+        <li>Integrated Salesforce with ERP via REST/SOAP APIs — improved cross-system reporting accuracy 15%</li>
+      </ul>
+      <div class="tags"><span class="tag">Marketing Cloud</span><span class="tag">Requirements</span><span class="tag">Data Modeling</span><span class="tag">REST/SOAP APIs</span><span class="tag">Tableau</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="trailhead-sec" id="trailhead">
+  <div class="sec-lbl">Salesforce Trailhead</div>
+  <div class="sec-title" style="color:white">Trailhead Profile</div>
+  <p class="sec-intro">Continuous learning is core to how I work. 16 Superbadges demonstrate hands-on technical depth beyond standard certification prep.</p>
+  <div class="th-grid">
+    <div>
+      <div class="th-stats">
+        <div class="th-stat"><div class="th-num">51</div><div class="th-lbl">Badges earned</div></div>
+        <div class="th-stat"><div class="th-num">72.5k</div><div class="th-lbl">Points</div></div>
+        <div class="th-stat"><div class="th-num">16</div><div class="th-lbl">Superbadges</div></div>
+        <div class="th-stat"><div class="th-num">4</div><div class="th-lbl">Trails</div></div>
+      </div>
+      <div class="ranger-box">
+        <div class="ranger-top"><span>Expeditioner → Ranger</span><span style="color:var(--teal)">51 / 100 badges</span></div>
+        <div class="ranger-bar"><div class="ranger-fill"></div></div>
+        <div class="ranger-note">49 badges to Ranger rank — actively earning</div>
+      </div>
+    </div>
+    <div class="th-right">
+      <h3>16 Superbadges Earned</h3>
+      <p>Superbadges require completing real multi-step Salesforce challenges — not multiple choice. Each proves hands-on ability in a specific domain.</p>
+      <div class="sb-list">
+        <div class="sb-item">Admin Super Set</div>
+        <div class="sb-item">Security Specialist Superbadge</div>
+        <div class="sb-item">User Access Specialist Superbadge</div>
+        <div class="sb-item">Data Standardization Superbadge Unit</div>
+        <div class="sb-item">+ 12 additional superbadges completed</div>
+      </div>
+      <div class="ctags">
+        <span class="ctag">#AwesomeAdmin</span>
+        <span class="ctag">#Salesblazer</span>
+        <span class="ctag">#DaringDevelopers</span>
+        <span class="ctag">#AllStarArchitect</span>
+      </div>
+      <div style="margin-top:1.4rem">
+        <a href="https://www.salesforce.com/trailblazer/manojpentapalli" target="_blank" class="btn-o" style="font-size:.82rem;padding:.6rem 1.2rem">View Trailblazer Profile →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="sec-lbl">Work Samples</div>
+  <div class="sec-title">Portfolio</div>
+  <p class="sec-intro">Real artifacts from real projects. Each item represents actual deliverable work — not hypotheticals or classroom exercises.</p>
+  <div class="port-grid">
+    <div class="port-card"><div class="port-num">01</div><div class="port-type">Requirements · SRS</div><h3>GET Pragnya App — Software Requirements Specification</h3><p>Full SRS for a HIPAA-compliant mobile app. 6 modules, approval-gated scope, MVP vs Phase 2 clearly separated. Consumed directly by the development team.</p><span class="status s-wip">🔄 Upload in progress</span></div>
+    <div class="port-card"><div class="port-num">02</div><div class="port-type">Analysis · BRD</div><h3>Add On Support — Business Requirements Document</h3><p>BRD documenting current-state process gaps, stakeholder needs, and functional requirements for Salesforce CRM implementation at a nonprofit.</p><span class="status s-wip">🔄 In progress</span></div>
+    <div class="port-card"><div class="port-num">03</div><div class="port-type">Process Map · Swimlane</div><h3>Client Onboarding — End-to-End Process Flow</h3><p>Swimlane diagram showing participant intake from first contact through service delivery. Defines ownership, decision points, and system touchpoints across 4 stakeholder groups.</p><span class="status s-wip">🔄 In progress</span></div>
+    <div class="port-card"><div class="port-num">04</div><div class="port-type">Financial Analysis</div><h3>Program Cost Model — 52-Week Budget Baseline</h3><p>Multi-variable cost model in Google Sheets. Fixed vs variable costs separated. ~$2.00/person baseline established. Used in leadership budget planning for 3 programs.</p><span class="status s-live">✅ Complete</span></div>
+    <div class="port-card"><div class="port-num">05</div><div class="port-type">Data Model · Architecture</div><h3>Salesforce Object Model — Nonprofit Service Org</h3><p>Custom object relationship diagram with field definitions, lookup relationships, and data governance rationale for a service delivery org.</p><span class="status s-plan">⏳ Planned</span></div>
+    <div class="port-card"><div class="port-num">06</div><div class="port-type">Dev Org · Configuration</div><h3>Salesforce Dev Org — Volunteer Management System</h3><p>Custom objects, automated Flows, role-based permission sets, and KPI dashboard built in a developer org. Demonstrates hands-on Salesforce configuration end-to-end.</p><span class="status s-plan">⏳ Planned</span></div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="sec-lbl">Capabilities</div>
+  <div class="sec-title">Skills & Tools</div>
+  <p class="sec-intro">Technical depth across Salesforce, combined with formal business analysis training and hands-on data work.</p>
+  <div class="skills-grid">
+    <div class="sg"><div class="sg-title">Business Analysis</div><div class="pills"><span class="skpill">Requirements Elicitation</span><span class="skpill">Gap Analysis</span><span class="skpill">Process Mapping</span><span class="skpill">User Stories</span><span class="skpill">Acceptance Criteria</span><span class="skpill">SRS / BRD</span><span class="skpill">UAT</span><span class="skpill">Stakeholder Mgmt</span><span class="skpill">Change Management</span></div></div>
+    <div class="sg"><div class="sg-title">Salesforce Platform</div><div class="pills"><span class="skpill">Sales Cloud</span><span class="skpill">Service Cloud</span><span class="skpill">Marketing Cloud</span><span class="skpill">NPSP</span><span class="skpill">Flow Builder</span><span class="skpill">Process Builder</span><span class="skpill">Validation Rules</span><span class="skpill">Approval Processes</span><span class="skpill">Roles & Profiles</span><span class="skpill">Permission Sets</span><span class="skpill">SOQL</span></div></div>
+    <div class="sg"><div class="sg-title">Integrations & Data</div><div class="pills"><span class="skpill">REST / SOAP APIs</span><span class="skpill">Data Loader</span><span class="skpill">ETL Tools</span><span class="skpill">ERP Integrations</span><span class="skpill">Firebase / Firestore</span><span class="skpill">Google Apps Script</span><span class="skpill">Data Modeling</span><span class="skpill">Data Governance</span></div></div>
+    <div class="sg"><div class="sg-title">Analytics & Reporting</div><div class="pills"><span class="skpill">Tableau</span><span class="skpill">Salesforce Dashboards</span><span class="skpill">Google Sheets (Advanced)</span><span class="skpill">Excel</span><span class="skpill">Cost Modeling</span><span class="skpill">KPI Reporting</span></div></div>
+    <div class="sg"><div class="sg-title">Project & Methodology</div><div class="pills"><span class="skpill">Agile / Scrum</span><span class="skpill">Sprint Planning</span><span class="skpill">Release Management</span><span class="skpill">Azure DevOps</span><span class="skpill">SDLC</span><span class="skpill">HIPAA Compliance</span><span class="skpill">WCAG 2.1</span></div></div>
+    <div class="sg"><div class="sg-title">Certifications</div><div class="pills"><span class="skpill">Salesforce Admin ADM-201</span><span class="skpill">Platform App Builder</span><span class="skpill">M.S. Business Analytics</span><span class="skpill">B.Tech Computer Science</span><span class="skpill">16 Trailhead Superbadges</span></div></div>
+  </div>
+</section>
+
+<section class="contact-sec" id="contact">
+  <div class="sec-lbl">Get In Touch</div>
+  <div class="sec-title">Let's Talk</div>
+  <p class="contact-desc">Open to Salesforce BA, CRM Business Analyst, and Business Systems Analyst roles. Available immediately. Based in Hayward, CA — open to remote and hybrid.</p>
+  <div class="contact-links">
+    <a href="mailto:saimanojpentapalli@gmail.com" class="cl">✉ saimanojpentapalli@gmail.com</a>
+    <a href="https://linkedin.com/in/saimanojpentapalli" target="_blank" class="cl">in LinkedIn</a>
+    <a href="https://www.salesforce.com/trailblazer/manojpentapalli" target="_blank" class="cl">⚡ Trailblazer</a>
+    <a href="https://github.com/PSManoj" target="_blank" class="cl">⌥ GitHub</a>
+  </div>
+  <p class="contact-note">📍 Hayward, CA &nbsp;·&nbsp; <strong>+1-341-208-9929</strong> &nbsp;·&nbsp; F1 STEM OPT · Open to H1B sponsorship</p>
+</section>
+
+<footer>© 2026 Sai Manoj Pentapalli · Salesforce Business Analyst · github.com/PSManoj</footer>
+
+</body>
+</html>
