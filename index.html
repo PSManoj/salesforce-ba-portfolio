@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sai Manoj Pentapalli — Salesforce Business Analyst</title>
+<title>Sai Manoj Pentapalli - Salesforce Business Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
@@ -16,6 +16,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,31,61,0.9
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--blue2)}
+.certs-sec{background:var(--off)}
+.certs-rows{display:flex;flex-direction:column;gap:1.2rem}
+.cert-row{display:flex;align-items:center;gap:2rem;border-radius:14px;padding:1.8rem 2rem;transition:box-shadow .2s,transform .15s}
+.cert-row:hover{box-shadow:0 6px 28px rgba(15,31,61,.12);transform:translateY(-2px)}
+.sf-row{background:linear-gradient(135deg,#0F1F3D 0%,#1a3a6b 100%)}
+.snow-row{background:linear-gradient(135deg,#0c2d4a 0%,#1a5276 100%)}
+.goog-row{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)}
+.cert-row-badge{flex-shrink:0;width:110px;height:110px}
+.cert-row-badge img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+.goog-badge-placeholder{width:110px;height:110px;display:flex;align-items:center;justify-content:center}
+.goog-badge-inner{background:linear-gradient(135deg,#4285F4,#34A853);border-radius:50%;width:90px;height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.goog-g{font-size:2rem;font-weight:900;color:var(--white);line-height:1}
+.goog-label{font-size:.5rem;font-weight:700;color:rgba(255,255,255,.85);text-align:center;letter-spacing:.05em;text-transform:uppercase;line-height:1.3}
+.cert-row-body{flex:1}
+.cert-row-issuer{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.25rem}
+.cert-row-name{font-size:1.1rem;font-weight:700;color:var(--white);line-height:1.3;margin-bottom:.5rem}
+.cert-row-sub{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:.75rem}
+.cert-row-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem}
+.cert-pill{font-size:.7rem;font-weight:600;padding:.22rem .65rem;border-radius:100px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15)}
+.cert-pill.active{background:rgba(6,165,154,.25);color:#4ecca3;border-color:rgba(6,165,154,.4)}
+.cert-skills{display:flex;flex-wrap:wrap;gap:.4rem}
+.cert-skills span{font-size:.68rem;padding:.18rem .55rem;border-radius:4px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+@media(max-width:600px){.cert-row{flex-direction:column;align-items:flex-start}.cert-row-badge{width:80px;height:80px}}
 .hero{min-height:100vh;background:var(--navy);display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;padding:80px 6vw 60px;gap:4rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(1,118,211,.18) 0%,transparent 68%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-80px;left:20%;width:500px;height:500px;background:radial-gradient(circle,rgba(6,165,154,.09) 0%,transparent 65%);pointer-events:none}
@@ -67,7 +90,7 @@ section{padding:88px 6vw}
 .exp-ctx{font-size:.83rem;color:var(--gray);font-style:italic;margin-bottom:.85rem}
 .exp-bul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
 .exp-bul li{font-size:.88rem;color:#374860;padding-left:1.15rem;position:relative;line-height:1.6}
-.exp-bul li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:.72rem;top:.22rem}
+.exp-bul li::before{content:'*';position:absolute;left:0;color:var(--blue);font-size:.72rem;top:.22rem}
 .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem}
 .tag{font-size:.7rem;font-weight:500;padding:.2rem .58rem;border-radius:4px;background:rgba(1,118,211,.07);color:var(--blue);border:1px solid rgba(1,118,211,.14)}
 .trailhead-sec{background:var(--navy)}
@@ -103,7 +126,6 @@ section{padding:88px 6vw}
 .status{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:600;padding:.22rem .65rem;border-radius:100px}
 .s-live{background:rgba(6,165,154,.1);color:var(--teal)}
 .s-wip{background:rgba(1,118,211,.1);color:var(--blue)}
-.s-plan{background:rgba(90,106,126,.1);color:var(--gray)}
 .skills{background:var(--white)}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
 .sg{background:var(--off);border:1px solid var(--light);border-radius:10px;padding:1.35rem}
@@ -132,6 +154,7 @@ footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;colo
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#trailhead">Trailhead</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -143,15 +166,15 @@ footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;colo
     <div class="pill">Open to Work · San Jose, CA</div>
     <h1>Salesforce<br><em>Business Analyst</em></h1>
     <p class="hero-role">CRM Systems · Process Design · M.S. Business Analytics</p>
-    <p class="hero-desc">I bridge the gap between business problems and technical solutions — translating stakeholder needs into scalable CRM workflows, structured requirements, and data systems that actually get used.</p>
+    <p class="hero-desc">I got into Salesforce at my very first job back in 2019 and have been working with CRM systems ever since. There is something about how everything is recorded, organized, and connected that keeps me genuinely engaged. Four years of professional experience across enterprise, nonprofit, and startup environments, each one teaching me something the last one could not.</p>
     <div class="ctas">
       <a href="SaiManoj_Pentapalli_Resume.pdf" class="btn-p" download>Download Resume</a>
-      <a href="#portfolio" class="btn-o">View Portfolio</a>
+      <a href="#portfolio" class="btn-o">View My Work</a>
       <a href="mailto:saimanojpentapalli@gmail.com" class="btn-o">Get in Touch</a>
     </div>
   </div>
   <div class="hero-card">
-    <div class="hc-lbl">Career Snapshot</div>
+    <div class="hc-lbl">At a Glance</div>
     <div class="stat-grid">
       <div><div class="stat-num">4+</div><div class="stat-lbl">Years experience</div></div>
       <div><div class="stat-num">3</div><div class="stat-lbl">Industries</div></div>
@@ -159,13 +182,13 @@ footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;colo
       <div><div class="stat-num">16</div><div class="stat-lbl">Superbadges</div></div>
     </div>
     <div class="cert-stack">
-      <div class="cert-item">Salesforce Platform Administrator — Nov 2024</div>
-      <div class="cert-item">Platform App Builder — Apr 2025</div>
-      <div class="cert-item">M.S. Business Analytics · CSU East Bay</div>
+      <div class="cert-item">Salesforce Certified Administrator (ADM-201)</div>
+      <div class="cert-item">Platform App Builder (CRT-403)</div>
+      <div class="cert-item">M.S. Business Analytics - CSU East Bay</div>
     </div>
     <div class="trail-row">
       Trailhead <strong>Expeditioner</strong> · 51 badges · 72,500 pts<br>
-      <span class="sb-badge">◆ 16 Superbadges earned</span>
+      <span class="sb-badge">16 Superbadges earned</span>
     </div>
   </div>
 </section>
@@ -175,15 +198,15 @@ footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;colo
   <div class="sec-title">Who I Am</div>
   <div class="about-grid">
     <div class="story">
-      <p>I'm a <strong>Salesforce-focused Business Analyst</strong> with four years of experience across enterprise software, nonprofit operations, and early-stage startups. I started as a Salesforce administrator, earned an M.S. in Business Analytics, and discovered that what I do best sits at the intersection: understanding what a business actually needs, then making sure the system delivers it.</p>
-      <p>At <strong>EPIQ Global</strong>, I worked inside a large enterprise org serving 700+ users — building automations, leading UAT, integrating external systems. At <strong>Hopkins Software</strong>, I translated campaign strategy into Marketing Cloud workflows directly alongside sales and marketing stakeholders. At <strong>Add On Support Services</strong>, I designed an entire operational system from scratch — no CRM, no documentation, nothing — and built it all, from SRS authorship to legal policy addenda.</p>
-      <p>That experience taught me something important: <strong>the tool is secondary. Understanding the problem is everything.</strong> Whether that means writing an SRS, facilitating a stakeholder interview, or configuring a Salesforce Flow — the through-line is always the same: clarity first, then execution.</p>
+      <p>I found Salesforce at my very first job in 2019 and it immediately clicked. I loved being part of the sprints, sharing progress with the team, and learning something new every week. The way CRM systems keep everything organized, traceable, and connected felt like exactly what I wanted to spend my career doing.</p>
+      <p>Over four years I have worked across three very different environments. At <strong>EPIQ Global</strong>, a billion-dollar legal services company, I worked inside a large enterprise Salesforce org with 700+ users building automations and integrating external systems. At <strong>Hopkins Software</strong> I worked directly with sales and marketing teams translating their goals into Salesforce Marketing Cloud workflows. At <strong>Add On Support Services</strong> I joined an organization that had no systems, no documentation, and no processes at all. I built everything from scratch.</p>
+      <p>That last experience taught me the most. When there is no existing system to follow, you have to really understand what the business needs before you can build anything. That is the part of this work I find most interesting.</p>
     </div>
     <div class="hls">
-      <div class="hl"><div class="hl-ico">📋</div><div class="hl-txt"><h4>Requirements & Documentation</h4><p>SRS authorship, BRD writing, user stories, gap analysis — documentation that developers and executives both actually use.</p></div></div>
-      <div class="hl"><div class="hl-ico">⚙️</div><div class="hl-txt"><h4>Salesforce Configuration</h4><p>Flow Builder, validation rules, approval processes, REST API integrations, security configuration, data governance across multiple orgs.</p></div></div>
-      <div class="hl"><div class="hl-ico">📊</div><div class="hl-txt"><h4>Data & Process Analysis</h4><p>Cost modeling, KPI dashboards, venue viability analysis, program budget baselines — turning raw data into decisions leadership can act on.</p></div></div>
-      <div class="hl"><div class="hl-ico">🤝</div><div class="hl-txt"><h4>Stakeholder Alignment</h4><p>Interviewing executives, translating non-technical requirements, managing mid-project pivots — keeping business and technical teams on the same page.</p></div></div>
+      <div class="hl"><div class="hl-ico">📋</div><div class="hl-txt"><h4>Requirements and Documentation</h4><p>I gather what people actually need, not just what they say they want. Then I write it clearly enough that a developer can build it and a director can approve it.</p></div></div>
+      <div class="hl"><div class="hl-ico">⚙️</div><div class="hl-txt"><h4>Salesforce Configuration</h4><p>Flow Builder, validation rules, approval processes, REST API integrations, permission sets, security configuration across Sales Cloud, Service Cloud, Marketing Cloud, and NPSP.</p></div></div>
+      <div class="hl"><div class="hl-ico">📊</div><div class="hl-txt"><h4>Process Design and Automation</h4><p>I have built automated contract and billing pipelines using Google Apps Script that replaced entirely manual processes. I design workflows people actually follow because they make the job easier.</p></div></div>
+      <div class="hl"><div class="hl-ico">🤝</div><div class="hl-txt"><h4>Stakeholder Work</h4><p>I have interviewed CEOs and COOs to understand what they need and translated that into technical requirements. Comfortable working with executives and developers in the same week.</p></div></div>
     </div>
   </div>
 </section>
@@ -191,77 +214,92 @@ footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;colo
 <section class="experience" id="experience">
   <div class="sec-lbl">Work History</div>
   <div class="sec-title">Experience</div>
-  <p class="sec-intro">Four years across enterprise, nonprofit, and startup environments — each role adding a different dimension to how I think about CRM systems and business problems.</p>
+  <p class="sec-intro">Four years across enterprise, nonprofit, and startup environments. Each role was different and each one added something new.</p>
   <div class="timeline">
+
     <div class="exp-item">
-      <div class="exp-meta"><span class="exp-co">Add On Support Services</span><span class="exp-date">May 2025 – Present</span></div>
-      <div class="exp-title">CRM Business Analyst & Project Coordinator</div>
-      <div class="exp-ctx">Nonprofit serving neurodiverse individuals — joined with no CRM, no processes, no documentation and built the entire operational infrastructure from scratch.</div>
+      <div class="exp-meta"><span class="exp-co">Add On Support Services</span><span class="exp-date">May 2025 - Present</span></div>
+      <div class="exp-title">CRM Business Analyst and Project Coordinator</div>
+      <div class="exp-ctx">A nonprofit serving neurodiverse individuals. Joined when the organization had no CRM, no documented processes, and no operational framework. Everything here was built from scratch.</div>
       <ul class="exp-bul">
-        <li>Conducted stakeholder interviews with CEO, COO, and department leads to elicit, document, and validate business requirements across 4 departments</li>
-        <li>Performed end-to-end gap analysis across all operational domains, identifying process failures and designing future-state workflows to address each gap</li>
-        <li>Authored a comprehensive organizational knowledge base consolidating SOPs for client intake, contract management, billing, scheduling, and staff onboarding</li>
-        <li>Built an automated contract generation system using Google Forms, Apps Script, and third-party e-signature integration — eliminating manual contract drafting entirely</li>
-        <li>Designed and deployed an automated billing pipeline using Google Sheets and Apps Script — batch-generating invoices monthly and eliminating manual data entry</li>
-        <li>Conducting Salesforce CRM pre-implementation analysis — evaluating organizational data structures against Salesforce object model to define migration scope and architecture</li>
+        <li>Interviewed the CEO, COO, and leads from four departments to understand how the business actually works, then turned that into documented workflows and auditable processes</li>
+        <li>Ran gap analysis across every operational area, identified where things were breaking down, and designed new workflows to fix each one</li>
+        <li>Wrote a 28-page organizational knowledge base covering client intake, contracts, billing, scheduling, and staff onboarding that the whole team now uses daily</li>
+        <li>Built an automated contract generation system using Google Forms, Apps Script, and third-party e-signature integration that assembles agreements, assigns contract numbers, routes for approval, and sends to clients automatically</li>
+        <li>Built an automated billing pipeline in Google Sheets and Apps Script that generates invoices for all active clients every month and logs everything without anyone entering data manually</li>
+        <li>Designed data governance standards across Google Workspace covering naming conventions, document versioning, storage structure, and archiving protocols in preparation for Salesforce CRM adoption</li>
+        <li>Conducted a platform evaluation for a HIPAA-compliant mobile application, assessed competing technologies against compliance requirements, backend complexity, and launch feasibility, and delivered comparison documentation that drove the platform selection decision</li>
+        <li>Currently doing Salesforce CRM pre-implementation analysis by evaluating organizational data structures against the Salesforce object model to define migration scope and architecture</li>
       </ul>
       <div class="tags"><span class="tag">Requirements Elicitation</span><span class="tag">Gap Analysis</span><span class="tag">Process Design</span><span class="tag">Google Apps Script</span><span class="tag">Data Governance</span><span class="tag">SOP Authorship</span></div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-meta"><span class="exp-co">Senior Lives Matter</span><span class="exp-date">Aug 2024 – May 2025</span></div>
+      <div class="exp-meta"><span class="exp-co">Senior Lives Matter</span><span class="exp-date">Aug 2024 - May 2025</span></div>
       <div class="exp-title">CRM Analyst</div>
-      <div class="exp-ctx">Nonprofit serving senior communities — sole CRM and systems resource, building all operational and digital infrastructure from the ground up.</div>
+      <div class="exp-ctx">A nonprofit serving senior communities. Was the only systems and CRM person there. Built all operational and digital infrastructure from the ground up.</div>
       <ul class="exp-bul">
-        <li>Gathered requirements from executive leadership to define CRM and donor management needs — evaluated multiple platforms against operational requirements and scalability</li>
-        <li>Designed end-to-end donor acquisition and management workflows, mapping the full donor lifecycle and producing documentation structured for future CRM implementation</li>
-        <li>Conducted gap analysis between web analytics data and planned CRM records; designed a UTM tracking framework targeting 25% improvement in attribution accuracy</li>
-        <li>Built SOPs for donor intake, volunteer onboarding, and reporting — establishing the organization's first formal documentation framework</li>
-        <li>Managed end-to-end grant process — researching opportunities, editing applications for clarity, submitting to foundations, and managing follow-up communications</li>
+        <li>Sat with the founder and worked through what the organization needed from a CRM, evaluated multiple platforms against their actual requirements, budget, and growth plans, and recommended the right solution</li>
+        <li>Mapped the full donor lifecycle from first contact through donation tracking, campaign reporting, and retention, and documented everything in a format ready for CRM implementation</li>
+        <li>Ran a gap analysis between existing web analytics and the planned CRM setup, then designed a UTM tracking framework to connect campaign data with donor pipeline data, targeting a 25% improvement in attribution accuracy</li>
+        <li>Built SOPs for donor intake, volunteer onboarding, and reporting, which became the first formal documentation the organization ever had</li>
+        <li>Designed automated lead capture forms with field logic aligned to the planned CRM data model, enabling a 40% reduction in projected manual data entry upon implementation</li>
+        <li>Built the organization website from scratch and set up all digital platforms so every data capture point would feed cleanly into the planned CRM</li>
+        <li>Managed the grant process from start to finish by researching funding opportunities, editing applications for clarity and impact, submitting to foundations, and following up on every submission</li>
       </ul>
       <div class="tags"><span class="tag">CRM Planning</span><span class="tag">Requirements Gathering</span><span class="tag">Donor Workflows</span><span class="tag">UTM Tracking</span><span class="tag">SOP Development</span><span class="tag">Grant Management</span></div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-meta"><span class="exp-co">EPIQ Global</span><span class="exp-date">Aug 2021 – Mar 2022</span></div>
+      <div class="exp-meta"><span class="exp-co">EPIQ Global</span><span class="exp-date">Aug 2021 - Mar 2022</span></div>
       <div class="exp-title">Associate Business Analyst</div>
-      <div class="exp-ctx">Enterprise Salesforce org — automation, data governance, integrations, and UAT at scale.</div>
+      <div class="exp-ctx">A billion-dollar legal services company with a large enterprise Salesforce environment. This is where I learned what Salesforce at real scale looks like.</div>
       <ul class="exp-bul">
-        <li>Deployed 25+ Flows and Process Builder automations for 700+ users — reduced manual tasks 28%, cut case escalations 50%</li>
-        <li>Configured roles, profiles, permission sets, and sharing rules achieving 99.9% audit compliance</li>
-        <li>Integrated Salesforce with external systems via REST API and Data Loader — reduced sync failures 35%</li>
-        <li>Led UAT for 10+ major releases; authored test scripts, tracked defects, zero critical post-deploy bugs, improved release velocity 20%</li>
+        <li>Worked with project managers and business stakeholders to define requirements, ran gap analysis, and translated functional needs into Salesforce solutions across multiple orgs</li>
+        <li>Deployed 25+ Flows and Process Builder automations for 700+ users, cutting manual tasks by 28% and reducing case escalations by 50%</li>
+        <li>Configured roles, profiles, permission sets, and sharing rules to enforce least-privilege access, which achieved 99.9% audit compliance across the organization</li>
+        <li>Integrated Salesforce with external enterprise systems via REST API and Data Loader, automating nightly data synchronizations and reducing system failures by 35%</li>
+        <li>Built and customized Lightning pages, Apex classes, and custom Salesforce applications for multiple departments to meet complex business requirements</li>
+        <li>Led UAT across 10+ major releases in dedicated UAT environments following Agile sprint cycles, wrote all test scripts, tracked every defect, and shipped with zero critical post-deploy bugs, improving release velocity by 20%</li>
       </ul>
-      <div class="tags"><span class="tag">Salesforce</span><span class="tag">Flow Builder</span><span class="tag">REST API</span><span class="tag">UAT</span><span class="tag">Data Loader</span></div>
+      <div class="tags"><span class="tag">Salesforce</span><span class="tag">Flow Builder</span><span class="tag">Apex</span><span class="tag">REST API</span><span class="tag">UAT</span><span class="tag">Agile</span><span class="tag">Data Loader</span></div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-meta"><span class="exp-co">Amazon</span><span class="exp-date">Oct 2020 – Aug 2021</span></div>
-      <div class="exp-title">Digital, Device & Alexa Support Associate</div>
-      <div class="exp-ctx">CRM-driven support operations — process optimization and AI self-service tool development.</div>
+      <div class="exp-meta"><span class="exp-co">Amazon</span><span class="exp-date">Oct 2020 - Aug 2021</span></div>
+      <div class="exp-title">Digital, Device and Alexa Support Associate</div>
+      <div class="exp-ctx">Technical support for Alexa and Amazon digital devices. Fast-paced and data-driven work that taught me how CRM systems perform in high-volume environments.</div>
       <ul class="exp-bul">
-        <li>Resolved 95% of Alexa-related issues on first contact via CRM workflows — reduced resolution time 15%</li>
-        <li>Partnered with engineering to develop AI-powered self-service tools — reduced repeat tickets 20%</li>
-        <li>Optimized CRM-based support processes improving agent productivity and satisfaction scores 20%</li>
+        <li>Analyzed device logs and diagnostic data to find root causes of service failures and resolved 95% of issues on first contact using structured CRM case management workflows, cutting average resolution time by 15%</li>
+        <li>Spotted recurring failure patterns in the data, worked with engineering to build AI-powered self-service tools, and reduced repeat support tickets by 20%</li>
+        <li>Optimized CRM support workflows and case routing processes, which improved agent productivity and customer satisfaction scores by 20%</li>
       </ul>
-      <div class="tags"><span class="tag">CRM</span><span class="tag">Process Optimization</span><span class="tag">AI Tools</span></div>
+      <div class="tags"><span class="tag">CRM</span><span class="tag">Log Analysis</span><span class="tag">Process Optimization</span></div>
     </div>
+
     <div class="exp-item">
-      <div class="exp-meta"><span class="exp-co">Hopkins Software Pvt Ltd</span><span class="exp-date">Aug 2019 – Oct 2020</span></div>
-      <div class="exp-title">Salesforce Business Analyst</div>
-      <div class="exp-ctx">Full BA role — requirements gathering, Marketing Cloud automation, stakeholder alignment, ERP integrations.</div>
+      <div class="exp-meta"><span class="exp-co">Hopkins Software Pvt Ltd</span><span class="exp-date">Aug 2019 - Oct 2020</span></div>
+      <div class="exp-title">Salesforce Administrator</div>
+      <div class="exp-ctx">My first job. This is where I found Salesforce. I worked directly with sales and marketing teams and learned how CRM connects to real business outcomes.</div>
       <ul class="exp-bul">
-        <li>Gathered requirements and implemented Marketing Cloud automation (Email Studio, Journey Builder, Pardot) — reduced manual effort 30%, improved conversions 25%</li>
-        <li>Designed 15+ Flows, validation rules, and approval processes — reduced errors 20%, accelerated sales cycle 15%</li>
-        <li>Performed data modeling and segmentation design improving campaign engagement 20%</li>
-        <li>Integrated Salesforce with ERP via REST/SOAP APIs — improved cross-system reporting accuracy 15%</li>
+        <li>Gathered requirements from sales and marketing stakeholders and implemented Marketing Cloud automation using Email Studio, Journey Builder, and Pardot, cutting manual effort by 30% and improving lead conversions by 25%</li>
+        <li>Built 15+ Flows, validation rules, and approval processes that reduced data errors by 20% and sped up the sales cycle by 15%</li>
+        <li>Ran monthly data cleansing and deduplication using Data Loader and Google Apps Script to keep pipeline accuracy at 99%</li>
+        <li>Designed audience segmentation models using Salesforce Reports, Excel pivot tables, and Tableau that boosted campaign engagement by 20%</li>
+        <li>Integrated Salesforce with ERP and third-party platforms via REST and SOAP APIs, which improved cross-system reporting accuracy by 15%</li>
+        <li>Built custom reports and real-time Salesforce dashboards to monitor KPIs across departments for sales and marketing leadership</li>
+        <li>Delivered end-user training sessions and wrote self-help guides on Salesforce best practices, cutting support tickets by 20% and speeding up user adoption</li>
       </ul>
-      <div class="tags"><span class="tag">Marketing Cloud</span><span class="tag">Requirements</span><span class="tag">Data Modeling</span><span class="tag">REST/SOAP APIs</span><span class="tag">Tableau</span></div>
+      <div class="tags"><span class="tag">Marketing Cloud</span><span class="tag">Flow Builder</span><span class="tag">Data Modeling</span><span class="tag">REST/SOAP APIs</span><span class="tag">Tableau</span><span class="tag">Pardot</span></div>
     </div>
+
   </div>
 </section>
 
 <section class="trailhead-sec" id="trailhead">
   <div class="sec-lbl">Salesforce Trailhead</div>
   <div class="sec-title" style="color:white">Trailhead Profile</div>
-  <p class="sec-intro">Continuous learning is core to how I work. 16 Superbadges demonstrate hands-on technical depth beyond standard certification prep.</p>
+  <p class="sec-intro">I use Trailhead regularly because Salesforce keeps evolving and staying current matters. 16 Superbadges means 16 real hands-on challenges completed, not multiple choice quizzes.</p>
   <div class="th-grid">
     <div>
       <div class="th-stats">
@@ -271,20 +309,20 @@ footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;colo
         <div class="th-stat"><div class="th-num">4</div><div class="th-lbl">Trails</div></div>
       </div>
       <div class="ranger-box">
-        <div class="ranger-top"><span>Expeditioner → Ranger</span><span style="color:var(--teal)">51 / 100 badges</span></div>
+        <div class="ranger-top"><span>Expeditioner to Ranger</span><span style="color:var(--teal)">51 of 100 badges</span></div>
         <div class="ranger-bar"><div class="ranger-fill"></div></div>
-        <div class="ranger-note">49 badges to Ranger rank — actively earning</div>
+        <div class="ranger-note">49 badges to go, actively working on it</div>
       </div>
     </div>
     <div class="th-right">
-      <h3>16 Superbadges Earned</h3>
-      <p>Superbadges require completing real multi-step Salesforce challenges — not multiple choice. Each proves hands-on ability in a specific domain.</p>
+      <h3>16 Superbadges</h3>
+      <p>Each Superbadge is a multi-step challenge that requires you to actually build something in Salesforce. You either get it working or you do not.</p>
       <div class="sb-list">
         <div class="sb-item">Admin Super Set</div>
         <div class="sb-item">Security Specialist Superbadge</div>
         <div class="sb-item">User Access Specialist Superbadge</div>
         <div class="sb-item">Data Standardization Superbadge Unit</div>
-        <div class="sb-item">+ 12 additional superbadges completed</div>
+        <div class="sb-item">12 more completed</div>
       </div>
       <div class="ctags">
         <span class="ctag">#AwesomeAdmin</span>
@@ -293,54 +331,220 @@ footer{background:#070D1C;text-align:center;padding:1.4rem;font-size:.74rem;colo
         <span class="ctag">#AllStarArchitect</span>
       </div>
       <div style="margin-top:1.4rem">
-        <a href="https://www.salesforce.com/trailblazer/manojpentapalli" target="_blank" class="btn-o" style="font-size:.82rem;padding:.6rem 1.2rem">View Trailblazer Profile →</a>
+        <a href="https://www.salesforce.com/trailblazer/manojpentapalli" target="_blank" class="btn-o" style="font-size:.82rem;padding:.6rem 1.2rem">View Full Profile</a>
       </div>
     </div>
   </div>
 </section>
 
+<section class="certs-sec" id="certifications">
+  <div class="sec-lbl">Credentials</div>
+  <div class="sec-title">Certifications</div>
+  <p class="sec-intro">Certifications I have earned that are directly relevant to the work I do. The two Salesforce certs carry the most weight for BA and CRM roles.</p>
+
+  <div class="certs-rows">
+
+    <div class="cert-row sf-row">
+      <div class="cert-row-badge">
+        <img src="SF-Admin-Badge.png" alt="Salesforce Certified Administrator Badge">
+      </div>
+      <div class="cert-row-body">
+        <div class="cert-row-issuer">Salesforce</div>
+        <div class="cert-row-name">Salesforce Certified Administrator</div>
+        <div class="cert-row-sub">The foundational Salesforce certification. Covers security and access, automation, data management, reports and dashboards, and platform configuration. This is the cert that proves you know how Salesforce actually works.</div>
+        <div class="cert-row-meta">
+          <span class="cert-pill">Issued Nov 2024</span>
+          <span class="cert-pill">Credential ID: 5327488</span>
+          <span class="cert-pill active">Active</span>
+        </div>
+        <div class="cert-skills">
+          <span>Flow Builder</span><span>Process Builder</span><span>Security and Access</span><span>Data Management</span><span>Reports and Dashboards</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-row sf-row">
+      <div class="cert-row-badge">
+        <img src="SF-AppBuilder-Badge.png" alt="Salesforce Platform App Builder Badge">
+      </div>
+      <div class="cert-row-body">
+        <div class="cert-row-issuer">Salesforce</div>
+        <div class="cert-row-name">Salesforce Platform App Builder</div>
+        <div class="cert-row-sub">Covers data modeling, business logic, Lightning App Builder, custom app development, and deployment. This cert demonstrates you can design and build solutions on the Salesforce platform, not just configure existing ones.</div>
+        <div class="cert-row-meta">
+          <span class="cert-pill">Issued Apr 2025</span>
+          <span class="cert-pill">Credential ID: 5993593</span>
+          <span class="cert-pill active">Active</span>
+        </div>
+        <div class="cert-skills">
+          <span>Data Modeling</span><span>Business Logic</span><span>Lightning App Builder</span><span>Formula Fields</span><span>Validation Rules</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-row snow-row">
+      <div class="cert-row-badge">
+        <img src="Snow-DataWarehouse-Badge.png" alt="Snowflake Data Warehousing Badge">
+      </div>
+      <div class="cert-row-body">
+        <div class="cert-row-issuer">Snowflake</div>
+        <div class="cert-row-name">Hands-On Essentials: Data Warehousing Workshop</div>
+        <div class="cert-row-sub">Hands-on training in cloud data warehousing concepts, virtual warehouses, data loading, and query optimization in the Snowflake environment.</div>
+        <div class="cert-row-meta">
+          <span class="cert-pill">Issued Jun 2024</span>
+          <span class="cert-pill">Credential ID: 106822394</span>
+        </div>
+        <div class="cert-skills">
+          <span>Data Warehousing</span><span>Data Analysis</span><span>Cloud Data</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-row snow-row">
+      <div class="cert-row-badge">
+        <img src="Snow-DataApps-Badge.png" alt="Snowflake Data Applications Badge">
+      </div>
+      <div class="cert-row-body">
+        <div class="cert-row-issuer">Snowflake</div>
+        <div class="cert-row-name">Hands-On Essentials: Data Application Builders Workshop</div>
+        <div class="cert-row-sub">Practical training in building data applications on Snowflake using Streamlit and SnowSQL, covering how to connect application layers to cloud data infrastructure.</div>
+        <div class="cert-row-meta">
+          <span class="cert-pill">Issued Jul 2024</span>
+          <span class="cert-pill">Credential ID: 106822394</span>
+        </div>
+        <div class="cert-skills">
+          <span>Streamlit</span><span>SnowSQL</span><span>Data Applications</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-row snow-row">
+      <div class="cert-row-badge">
+        <img src="Snow-Collaboration-Badge.png" alt="Snowflake Collaboration Badge">
+      </div>
+      <div class="cert-row-body">
+        <div class="cert-row-issuer">Snowflake</div>
+        <div class="cert-row-name">Hands-On Essentials: Collaboration, Marketplace and Cost Estimation</div>
+        <div class="cert-row-sub">Training in Snowflake Data Marketplace, secure data sharing, collaboration features, and cost estimation for cloud data workloads.</div>
+        <div class="cert-row-meta">
+          <span class="cert-pill">Issued Jun 2024</span>
+          <span class="cert-pill">Credential ID: 107080752</span>
+        </div>
+        <div class="cert-skills">
+          <span>Data Marketplace</span><span>Data Sharing</span><span>Cost Estimation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-row goog-row">
+      <div class="cert-row-badge goog-badge-placeholder">
+        <div class="goog-badge-inner">
+          <div class="goog-g">G</div>
+          <div class="goog-label">Digital<br>Marketing</div>
+        </div>
+      </div>
+      <div class="cert-row-body">
+        <div class="cert-row-issuer">Google / IAB</div>
+        <div class="cert-row-name">Digital Marketing by IAB and Google</div>
+        <div class="cert-row-sub">Comprehensive certification covering digital marketing fundamentals, Google Ads, data analytics, SEO, and campaign measurement. Directly relevant to the UTM tracking and campaign analytics work done across CRM implementations.</div>
+        <div class="cert-row-meta">
+          <span class="cert-pill">Issued May 2020</span>
+          <span class="cert-pill">Credential ID: 3LR LCN QVY</span>
+        </div>
+        <div class="cert-skills">
+          <span>Google Ads</span><span>Data Analysis</span><span>SEO</span><span>Campaign Analytics</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section class="portfolio" id="portfolio">
   <div class="sec-lbl">Work Samples</div>
-  <div class="sec-title">Portfolio</div>
-  <p class="sec-intro">Real artifacts from real projects. Each item represents actual deliverable work — not hypotheticals or classroom exercises.</p>
+  <div class="sec-title">Things I Built</div>
+  <p class="sec-intro">Real work from real projects. The first three are live and running in production right now.</p>
   <div class="port-grid">
-    <div class="port-card"><div class="port-num">01</div><div class="port-type">Process Design · Automation</div><h3>Automated Contract Generation System</h3><p>End-to-end contract pipeline built using Google Forms, Apps Script, and e-signature integration — auto-assembling service agreements, assigning contract numbers, routing for internal approval, and delivering for e-signature. Eliminated manual contract drafting entirely for a nonprofit operating across 4 departments.</p><span class="status s-live">✅ Built & deployed</span></div>
-    <div class="port-card"><div class="port-num">02</div><div class="port-type">Automation · Billing</div><h3>Automated Invoicing Pipeline</h3><p>Google Sheets and Apps Script pipeline that batch-generates SDP invoices for all active clients monthly, auto-logs invoice numbers, and maintains billing records — eliminating manual data entry across the full billing cycle.</p><span class="status s-live">✅ Built & deployed</span></div>
-    <div class="port-card"><div class="port-num">03</div><div class="port-type">Documentation · SOP</div><h3>Organizational Knowledge Base — 28-Page SOP Framework</h3><p>Comprehensive operational documentation covering the complete client and staff lifecycle — intake, contracts, billing, scheduling, and onboarding. Built from scratch in an organization with no prior documentation. Now used daily across 4 departments.</p><span class="status s-live">✅ Complete</span></div>
-    <div class="port-card"><div class="port-num">04</div><div class="port-type">Analysis · BRD</div><h3>Add On Support Services — Business Requirements Document</h3><p>BRD documenting current-state process gaps, stakeholder needs, and functional requirements for planned Salesforce CRM implementation.</p><span class="status s-wip">🔄 In progress</span></div>
-    <div class="port-card"><div class="port-num">05</div><div class="port-type">Process Map · Swimlane</div><h3>Cross-Departmental Process Flow</h3><p>Swimlane diagram mapping handoff logic across 5 functional teams — defining trigger conditions, parallel workflows, decision gates, and compliance checkpoints for a nonprofit service delivery organization.</p><span class="status s-wip">🔄 In progress</span></div>
-    <div class="port-card"><div class="port-num">06</div><div class="port-type">CRM Planning · Architecture</div><h3>Salesforce CRM Pre-Implementation Analysis</h3><p>Evaluating organizational data structures against the Salesforce object model — defining migration scope, contact management architecture, and case tracking requirements for a planned Salesforce adoption.</p><span class="status s-wip">🔄 In progress</span></div>
+
+    <div class="port-card">
+      <div class="port-num">01</div>
+      <div class="port-type">Automation - Contract Generation</div>
+      <h3>Automated Contract Pipeline</h3>
+      <p>The organization was drafting every service agreement manually. I built a system using Google Forms, Apps Script, and e-signature integration that assembles the contract, assigns a sequential contract number, routes it for internal approval, and sends it to the client for signature. Nobody touches a document template anymore.</p>
+      <span class="status s-live">Live in production</span>
+    </div>
+
+    <div class="port-card">
+      <div class="port-num">02</div>
+      <div class="port-type">Automation - Billing Pipeline</div>
+      <h3>Automated Invoicing System</h3>
+      <p>Billing used to be done manually every month. I built a Google Sheets and Apps Script pipeline that runs the whole process in one go. It generates invoices for every active client, handles different billing types separately, and logs all records automatically. Getting it to run correctly the first time was a genuinely good moment.</p>
+      <span class="status s-live">Live in production</span>
+    </div>
+
+    <div class="port-card">
+      <div class="port-num">03</div>
+      <div class="port-type">Documentation - SOP Knowledge Base</div>
+      <h3>28-Page Organizational Knowledge Base</h3>
+      <p>When I joined there was no documentation. If someone left, their knowledge walked out with them. I built a 28-page knowledge base covering the entire client and staff lifecycle across intake, contracts, billing, scheduling, and onboarding. Four departments use it daily and new staff can get up to speed without needing someone to walk them through everything.</p>
+      <span class="status s-live">Complete and in use</span>
+    </div>
+
+    <div class="port-card">
+      <div class="port-num">04</div>
+      <div class="port-type">Analysis - Business Requirements</div>
+      <h3>Salesforce CRM - Business Requirements Document</h3>
+      <p>A BRD for the planned Salesforce implementation at Add On Support Services. Documents current-state process gaps, stakeholder requirements, and functional specifications for the CRM adoption currently underway.</p>
+      <span class="status s-wip">In progress</span>
+    </div>
+
+    <div class="port-card">
+      <div class="port-num">05</div>
+      <div class="port-type">Process Design - Swimlane Diagram</div>
+      <h3>Cross-Departmental Process Map</h3>
+      <p>A swimlane diagram covering handoff logic across five functional teams including trigger conditions, parallel workflows, decision gates, and compliance checkpoints for the full client service delivery flow.</p>
+      <span class="status s-wip">In progress</span>
+    </div>
+
+    <div class="port-card">
+      <div class="port-num">06</div>
+      <div class="port-type">CRM Planning - Architecture</div>
+      <h3>Salesforce Pre-Implementation Analysis</h3>
+      <p>Mapping organizational data structures to the Salesforce object model to define migration scope, contact management architecture, and case tracking requirements ahead of the planned Salesforce adoption.</p>
+      <span class="status s-wip">In progress</span>
+    </div>
+
   </div>
 </section>
 
 <section class="skills" id="skills">
   <div class="sec-lbl">Capabilities</div>
-  <div class="sec-title">Skills & Tools</div>
-  <p class="sec-intro">Technical depth across Salesforce, combined with formal business analysis training and hands-on data work.</p>
+  <div class="sec-title">Skills and Tools</div>
+  <p class="sec-intro">Everything listed here is something I have actually used in a real project.</p>
   <div class="skills-grid">
-    <div class="sg"><div class="sg-title">Business Analysis</div><div class="pills"><span class="skpill">Requirements Elicitation</span><span class="skpill">Gap Analysis</span><span class="skpill">Process Mapping</span><span class="skpill">User Stories</span><span class="skpill">Acceptance Criteria</span><span class="skpill">SRS / BRD</span><span class="skpill">UAT</span><span class="skpill">Stakeholder Mgmt</span><span class="skpill">Change Management</span></div></div>
-    <div class="sg"><div class="sg-title">Salesforce Platform</div><div class="pills"><span class="skpill">Sales Cloud</span><span class="skpill">Service Cloud</span><span class="skpill">Marketing Cloud</span><span class="skpill">NPSP</span><span class="skpill">Flow Builder</span><span class="skpill">Process Builder</span><span class="skpill">Validation Rules</span><span class="skpill">Approval Processes</span><span class="skpill">Roles & Profiles</span><span class="skpill">Permission Sets</span><span class="skpill">SOQL</span></div></div>
-    <div class="sg"><div class="sg-title">Integrations & Data</div><div class="pills"><span class="skpill">REST / SOAP APIs</span><span class="skpill">Data Loader</span><span class="skpill">ETL Tools</span><span class="skpill">ERP Integrations</span><span class="skpill">Firebase / Firestore</span><span class="skpill">Google Apps Script</span><span class="skpill">Data Modeling</span><span class="skpill">Data Governance</span></div></div>
-    <div class="sg"><div class="sg-title">Analytics & Reporting</div><div class="pills"><span class="skpill">Tableau</span><span class="skpill">Salesforce Dashboards</span><span class="skpill">Google Sheets (Advanced)</span><span class="skpill">Excel</span><span class="skpill">Cost Modeling</span><span class="skpill">KPI Reporting</span></div></div>
-    <div class="sg"><div class="sg-title">Project & Methodology</div><div class="pills"><span class="skpill">Agile / Scrum</span><span class="skpill">Sprint Planning</span><span class="skpill">Release Management</span><span class="skpill">Azure DevOps</span><span class="skpill">SDLC</span><span class="skpill">HIPAA Compliance</span><span class="skpill">WCAG 2.1</span></div></div>
-    <div class="sg"><div class="sg-title">Certifications</div><div class="pills"><span class="skpill">Salesforce Admin ADM-201</span><span class="skpill">Platform App Builder</span><span class="skpill">M.S. Business Analytics</span><span class="skpill">B.Tech Computer Science</span><span class="skpill">16 Trailhead Superbadges</span></div></div>
+    <div class="sg"><div class="sg-title">Business Analysis</div><div class="pills"><span class="skpill">Requirements Elicitation</span><span class="skpill">Gap Analysis</span><span class="skpill">Process Mapping</span><span class="skpill">User Stories</span><span class="skpill">Acceptance Criteria</span><span class="skpill">BRD / SRS</span><span class="skpill">UAT</span><span class="skpill">Stakeholder Management</span><span class="skpill">Change Management</span><span class="skpill">SDLC</span></div></div>
+    <div class="sg"><div class="sg-title">Salesforce</div><div class="pills"><span class="skpill">Sales Cloud</span><span class="skpill">Service Cloud</span><span class="skpill">Marketing Cloud</span><span class="skpill">NPSP</span><span class="skpill">Flow Builder</span><span class="skpill">Process Builder</span><span class="skpill">Apex</span><span class="skpill">Lightning Web Components</span><span class="skpill">Validation Rules</span><span class="skpill">Approval Processes</span><span class="skpill">Permission Sets</span><span class="skpill">Data Loader</span><span class="skpill">SOQL</span><span class="skpill">Reports and Dashboards</span></div></div>
+    <div class="sg"><div class="sg-title">Automation and Integration</div><div class="pills"><span class="skpill">Google Apps Script</span><span class="skpill">REST / SOAP APIs</span><span class="skpill">ETL Tools</span><span class="skpill">ERP Integrations</span><span class="skpill">Firebase / Firestore</span><span class="skpill">Data Modeling</span><span class="skpill">Data Governance</span></div></div>
+    <div class="sg"><div class="sg-title">Analytics and Reporting</div><div class="pills"><span class="skpill">Tableau</span><span class="skpill">Salesforce Dashboards</span><span class="skpill">Google Sheets</span><span class="skpill">MS Excel</span><span class="skpill">KPI Reporting</span><span class="skpill">Google Analytics</span><span class="skpill">UTM Tracking</span></div></div>
+    <div class="sg"><div class="sg-title">Project and Methodology</div><div class="pills"><span class="skpill">Agile / Scrum</span><span class="skpill">Sprint Planning</span><span class="skpill">Release Management</span><span class="skpill">Azure DevOps</span><span class="skpill">HIPAA Compliance</span><span class="skpill">SOP Development</span></div></div>
+    <div class="sg"><div class="sg-title">Certifications</div><div class="pills"><span class="skpill">Salesforce Admin ADM-201</span><span class="skpill">Platform App Builder CRT-403</span><span class="skpill">16 Trailhead Superbadges</span><span class="skpill">Trailhead Expeditioner</span><span class="skpill">M.S. Business Analytics</span></div></div>
   </div>
 </section>
 
 <section class="contact-sec" id="contact">
   <div class="sec-lbl">Get In Touch</div>
   <div class="sec-title">Let's Talk</div>
-  <p class="contact-desc">Open to Salesforce BA, CRM Business Analyst, and Business Systems Analyst roles. Available immediately. Based in San Jose, CA — open to remote and hybrid.</p>
+  <p class="contact-desc">I am actively looking for Salesforce BA, CRM Business Analyst, and Business Systems Analyst roles. Available immediately and open to remote, hybrid, or on-site positions in California and beyond.</p>
   <div class="contact-links">
-    <a href="mailto:saimanojpentapalli@gmail.com" class="cl">✉ saimanojpentapalli@gmail.com</a>
-    <a href="https://linkedin.com/in/manoj-pentapalli" target="_blank" class="cl">in LinkedIn</a>
-    <a href="https://www.salesforce.com/trailblazer/manojpentapalli" target="_blank" class="cl">⚡ Trailblazer</a>
-    <a href="https://github.com/PSManoj" target="_blank" class="cl">⌥ GitHub</a>
+    <a href="mailto:saimanojpentapalli@gmail.com" class="cl">saimanojpentapalli@gmail.com</a>
+    <a href="https://linkedin.com/in/manoj-pentapalli" target="_blank" class="cl">LinkedIn</a>
+    <a href="https://www.salesforce.com/trailblazer/manojpentapalli" target="_blank" class="cl">Trailblazer Profile</a>
+    <a href="https://github.com/PSManoj" target="_blank" class="cl">GitHub</a>
   </div>
-  <p class="contact-note">📍 San Jose, CA &nbsp;·&nbsp; <strong>+1-341-208-9929</strong> &nbsp;·&nbsp; F1 STEM OPT · Open to H1B sponsorship</p>
+  <p class="contact-note">San Jose, CA · <strong>+1-341-208-9929</strong> · F1 STEM OPT · Open to H1B sponsorship</p>
 </section>
 
-<footer>© 2026 Sai Manoj Pentapalli · Salesforce Business Analyst · github.com/PSManoj</footer>
+<footer>2026 Sai Manoj Pentapalli · Salesforce Business Analyst · github.com/PSManoj</footer>
 
 </body>
 </html>
